@@ -14,7 +14,7 @@ export class TreeComponent {
   toggle:boolean = false;
   rotate:string = '';
   colored(){
-    this.color = this.color?'': 'green';
+    this.color = this.color?'':'green';
   }
   open(){
     this.toggle = !this.toggle;
