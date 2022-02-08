@@ -1,0 +1,8 @@
+<div>
+  <ul>
+    <li>
+      {{shop.name}}
+      <app-tree *ngFor="let shop of shop.type" [shop]="shop"></app-tree>
+    </li>
+  </ul>
+</div>
