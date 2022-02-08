@@ -2,3 +2,13 @@
   border: none;
   background-color: inherit;
 }
+.wrap {
+  margin: 0;
+}
+.wrap__item {
+  display: block;
+  cursor: pointer;
+}
+.green {
+  background-color: greenyellow;
+}

@@ -9,12 +9,20 @@ import { IShop } from '../modules/module';
 export class TreeComponent {
   @Input()
   shop!: IShop;
-  
-  color:string = '';
+  renderer:any;
+  bgClass:boolean = false;
   toggle:boolean = false;
   rotate:string = '';
-  colored(){
-    this.color = this.color?'':'green';
+  colored(event:any, className:string){
+    const hasClass = event.target.classList.contains(className);
+    if(hasClass){
+      event.target.classList.remove(className)
+    }
+    else{
+      event.target.classList.add(className)
+    }
+    event.stopPropagation();
+    
   }
   open(){
     this.toggle = !this.toggle;

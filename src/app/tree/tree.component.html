@@ -1,9 +1,9 @@
-<div>
+<div class="container">
   <button *ngIf="!!shop.type" (click)="open()" class="btn" [ngStyle]="{'transform':rotate}" >></button>
   {{shop.name}}
   <div *ngIf="toggle" class="wrap">
     <ul>
-      <li *ngFor="let shop of shop.type"  [ngStyle]="{'background':color, 'display': 'flex', 'cursor': 'pointer'}">
+      <li *ngFor="let shop of shop.type" (click)="colored($event, 'green')" class="wrap__item">
           <app-tree  [shop]="shop"></app-tree>
       </li>
     </ul>
