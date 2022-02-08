@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IShop } from '../modules/module';
 
 @Component({
@@ -6,13 +6,18 @@ import { IShop } from '../modules/module';
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.css']
 })
-export class TreeComponent implements OnInit {
+export class TreeComponent {
   @Input()
   shop!: IShop;
   
-  constructor() { }
-
-  ngOnInit() {
+  color:string = '';
+  toggle:boolean = false;
+  rotate:string = '';
+  colored(){
+    this.color = this.color?'': 'green';
   }
-
+  open(){
+    this.toggle = !this.toggle;
+    this.rotate = this.rotate? '':'rotate(90deg)';
+  }
 }

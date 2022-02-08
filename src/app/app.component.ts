@@ -64,7 +64,24 @@ export class AppComponent {
           ]
         }
       ]
-    }
+    },
+    {
+      name: 'skirt',
+      type:[
+        {
+          name: 'green'
+        },
+        {
+          name: 'black'
+        },
+        {
+          name: 'brown'
+        },
+        {
+          name: 'white'
+        }
+      ]
+    },
 
   ]
 

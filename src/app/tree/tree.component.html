@@ -1,8 +1,12 @@
 <div>
   <ul>
-    <li>
+    <li (click)="colored()" [ngStyle]="{'background':color, 'display': 'inline', 'cursor': 'pointer'}">
+      <button (click)="open()" class="btn" [ngStyle]="{'transform':rotate}">></button>
       {{shop.name}}
-      <app-tree *ngFor="let shop of shop.type" [shop]="shop"></app-tree>
+      <div *ngIf="toggle">
+        <app-tree *ngFor="let shop of shop.type" [shop]="shop"></app-tree>
+      </div>
     </li>
   </ul>
 </div>
+
