@@ -82,7 +82,16 @@ export class AppComponent {
         }
       ]
     },
-
   ]
+  color: boolean = false;
 
+  getColor($event:any){
+    if($event === 'green'){
+      this.color = true;
+      setTimeout(() => {
+        this.color = false;
+      }, 2000);
+      console.log($event);
+    }
+  }
 }
