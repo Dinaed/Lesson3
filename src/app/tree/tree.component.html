@@ -2,7 +2,7 @@
   <button *ngIf="!!shop.type" (click)="open()" class="btn" [ngStyle]="{'transform':rotate}">></button>
   {{shop.name}}
     <ul *ngIf="toggle" class="wrap">
-      <li *ngFor="let shop of shop.type" class="wrap__item">
+      <li *ngFor="let shop of shop.type" class="wrap__item" (click)="colored($event, 'green')">
         <input type="button" value="-" (click)="dellData(shop)">
         <app-tree  [shop]="shop"></app-tree>
       </li>
