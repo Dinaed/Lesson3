@@ -84,7 +84,11 @@ export class AppComponent {
     },
   ]
   color: boolean = false;
-
+  data:string = '';
+  addData(){
+    this.shops.push({name:this.data, type:[]});
+    this.data = '';
+  }  
   getColor($event:any){
     if($event === 'green'){
       this.color = true;

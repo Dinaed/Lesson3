@@ -1,2 +1,6 @@
 <h1>{{title}}</h1>
-<app-tree *ngFor="let shop of shops" [shop]="shop" (sendColor)="getColor($event)" [ngClass]="{'green': color}"></app-tree>
+<app-tree *ngFor="let shop of shops" [shop]="shop"  (sendColor)="getColor($event)" [ngClass]="{'green': color}"></app-tree>
+<div>
+  <input type="text" [(ngModel)] = "data">
+  <input type="button" value="+" (click)="addData()">
+</div>

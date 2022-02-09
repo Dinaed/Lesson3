@@ -13,7 +13,7 @@ export class TreeComponent {
   sendColor: EventEmitter<string> = new EventEmitter<string>();
   color:boolean = false;
   
-  renderer:any;
+
   bgClass:boolean = false;
   toggle:boolean = true;
   rotate:string = '';
@@ -41,7 +41,23 @@ export class TreeComponent {
       setTimeout(() => {
         this.color = false;
       }, 2000);
-      console.log($event);
+      $event.stopPropagation();
     }
   }
+
+  data:string = '';
+  addData(){
+    if(this.shop.type){
+      this.shop.type.push({name:this.data,});
+      this.data = '';
+    }
+  }
+  dellData(deletedData:IShop){
+    if(this.shop.type){
+      let index = this.shop.type.indexOf(deletedData);
+      if(index !== -1){
+        this.shop.type.splice(index, 1);
+      }
+    }
+  } 
 }
