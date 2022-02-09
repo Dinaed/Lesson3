@@ -9,12 +9,15 @@ import { IShop } from '../modules/module';
 export class TreeComponent {
   @Input()
   shop!: IShop;
+  @Output()
+  sendColor: EventEmitter<string> = new EventEmitter<string>();
+  color:boolean = false;
+  
   renderer:any;
   bgClass:boolean = false;
   toggle:boolean = true;
   rotate:string = '';
-  @Output()
-  sendColor: EventEmitter<string> = new EventEmitter<string>();
+  
 
   colored(event:any, className:string){
     event.target.classList.add(className)
@@ -26,9 +29,19 @@ export class TreeComponent {
       }, 2000)
     }
   }
+
   open(){
     this.toggle = !this.toggle;
     this.rotate = this.rotate? '':'rotate(90deg)';
   }
- 
+  
+  getColor($event:any){
+    if($event === 'green'){
+      this.color = true;
+      setTimeout(() => {
+        this.color = false;
+      }, 2000);
+      console.log($event);
+    }
+  }
 }
